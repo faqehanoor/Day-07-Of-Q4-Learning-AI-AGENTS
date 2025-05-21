@@ -53,7 +53,7 @@ Doesn’t need a lot of behavior (functions/methods)
 
 For example: Agent, Student, Book, Product, etc.
 
-🚀 Final Thought:
+## 🚀 Final Thought:
 
 @dataclass is like auto-magic for data holder classes.
 It makes your Python code cleaner, shorter, and smarter—especially when building real-world applications like APIs, games, and AI agents.
