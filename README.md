@@ -1,4 +1,4 @@
-## 🧠 What is a dataclass in Python?
+## 1) 🧠 What is a dataclass in Python?
 
 ## A dataclass is a special feature in Python (introduced in Python 3.7) that helps you quickly create classes meant to store data—without writing a lot of boring, repetitive code.
 
@@ -57,3 +57,48 @@ For example: Agent, Student, Book, Product, etc.
 
 @dataclass is like auto-magic for data holder classes.
 It makes your Python code cleaner, shorter, and smarter—especially when building real-world applications like APIs, games, and AI agents.
+
+## 2) 🔹 What is the system prompt?
+
+In an AI agent class (like one used with OpenAI’s API or LangChain), a system prompt is typically a special instruction given to the AI model to define its role, tone, or behavior.
+
+## Example:
+"You are a helpful assistant that speaks like Shakespeare."
+
+This is often stored in the class as a property or attribute called system_prompt.
+
+## ✅ Why is the system prompt stored inside the Agent class?
+
+Because the agent:
+
+1) Needs to know its own role or instructions
+
+2) May dynamically change or reuse the system prompt
+
+3) Might manage multiple prompts for different tasks
+
+4) So storing it inside the Agent class helps the AI agent act with context and memory.
+
+## 🔁 Why make the Agent class callable?
+
+In Python, if you define a method called __call__() inside a class, it lets you use the object like a function.
+
+class Agent:
+    def __call__(self, message):
+        return self.reply(message)
+
+Now you can do:
+
+agent = Agent()
+response = agent("What is AI?")
+
+This is just like calling a function — but it's actually an object! This is super handy for AI agents where you're passing in user messages and getting responses.
+
+## 🚀 Why this is powerful in AI projects:
+
+=> system_prompt gives the AI its identity
+
+=> Making the agent callable makes it behave like a smart function
+
+=> Together, they make the agent flexible, stateful, and reusable
+
